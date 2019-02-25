@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Les Films de Plein Air</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/logo2.png">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> <!-- Font awesome -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      $(function () {
+        $('nav>div>ul>li>a').on('click', function(e) {
+          e.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(this.hash).offset().top
+          }, 1500, function(){
+            window.location.hash = hash;
+          });
+        });
+      });
+    </script>
+
+  </head>
+  <body data-spy="scroll" data-target=".navbar">
+
+
+      <!-- code pour la modal qui s'affiche lors du clic pour réserver un film (bouton Je viens!) -->
+      <div class="modal fade" id="modalInscription" tabindex="-1" role="dialog" aria-labelledby="modalInscriptionlabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalInscriptionlabel">Indiquer votre présence</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                
+                  <form>
+                      <div class="form-group row col-auto">
+                        <label for="prenom" class="col-md-2 col-form-label">Prénom :</label>
+                        <div class="col-md-10"><input type="text" class="form-control" id="prenom" placeholder="Votre prénom"></div>
+                      </div>
+                      <div class="form-group row col-auto">
+                          <label for="nom"class="col-md-2 col-form-label">Nom :</label>
+                          <div class="col-md-10"><input type="text" class="form-control" id="nom" placeholder="Votre nom"></div>
+                      </div>
+                      <div class="form-group row col-auto">
+                          <label for="nbre" class="col-md-2 col-form-label">Combien serez-vous ?</label>
+                          <div class="col-md-10"><input type="number" class="form-control" id="nbre" min="1"></div>
+                        </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                          <button type="submit" class="btn btn-primary" data-dismiss="modal">Valider !</button>
+                      </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- fin du code pour la modal-->
+
+
+        <!-- Header avec le menu de navigation et l'image de fond -->
+        <header class="page-header">
+
+          <nav class="navbar navbar-dark navbar-expand-lg justify-content-center fixed-top">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-around" id="navbarTogglerDemo01">
+                  <a class="navbar-brand" href="#headerImage"><img src="images/logo2.png" height="100" alt="Les Films de Plein Air"/></a>
+                  <ul class="navbar-nav text-center">
+                    <li class="nav-item"><a class="nav-link" href="#actus">L'actualité</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#association">L'association</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#festival">Le festival</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#films">Les films</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                  </ul>
+                </div>
+            </nav>
+            <div id="headerImage"></div>
+
+        </header>
+        <!-- Fin du header -->
+
+        <div class="container-fluid">
+
+        <!-- Section "L'actualité" -->
+       <section class="row justify-content-md-center" id="actus">
+          <div class="col-md-12">
+            <div class="card-deck text-justify">
+              <div class="col-sm-6 col-md-3">
+              <div class="card">
+                <img class="card-img-top" src="images/auteuil.jpg" alt="Daniel Auteuil">
+                <div class="card-body">
+                  <h5 class="card-title">Un invité de marque !</h5>
+                  <p class="card-text">C'est avec grand plaisir que nous vous dévoilons aujourd'hui cette grande nouvelle. Grâce au travail de notre équipe, nous accueillerons Daniel Auteuil dans le cadre de 
+                    ce festival !<br /> Grand acteur connu pour ses rôles dans La fille sur le pont, Le huitième jour ou encore Les sous-doués, il nous fera honneur de sa présence pour un discours suivi d'une 
+                    séance de dédicaces.<br /> Réservez d'ors et déjà la date ! <strong>Le 6 août à 20h</strong>.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Alexandre Dupont - Le 20/02/19 à 14h08</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card">
+                <img class="card-img-top" src="images/foodtruck.jpg" alt="Restauration">
+                <div class="card-body">
+                  <h5 class="card-title">Un food-truck</h5>
+                  <p class="card-text">Vous avez prévu de passer la soirée à notre festival, ou tout simplement d'y passer un court moment ?<br />Que ce soit pour un repas complet ou un petit encas, nous avons
+                  le plaisir de vous annoncer qu'un camion de restauration sera à votre disposition <strong>tout au long de ces 4 jours de festivités de 18h à 23h30</strong> !<br />Nous remercions <strong>Nicolas et Lucie</strong> pour leur bienveillance et
+                leur professionnalisme quant à leur appproche de la cuisine.<br />A n'en pas douter un incontournable du festival !</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Lucie Duclos - Le 18/02/19 à 10h25</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card">
+                <img class="card-img-top" src="images/laLaLand.jpg" alt="La La Land">
+                <div class="card-body">
+                  <h5 class="card-title">Premier film annoncé !</h5>
+                  <p class="card-text">Le festival étant dans un peu moins de 6 mois, nous commençons à vous dévoiler les films qui seront projetés.<br />Et c'est avec un enthousiasme certain que le premier film dévoilé
+                    est....l'excellent La La Land ! Ce film mettant en scène <strong>Ryan Gosling et Emma Stone</strong> a rapidement trouvé son succès grâce à l'histoire touchante d'une actrice et d'un passionné de jazz à Los Angeles.
+                    <br />Il sera projeté en fermeture du festival, à savoir <strong>le 8 août à 22h30</strong>. Assurément un temps fort à ne pas manquer ! <br />Restez connecté car <strong>nous annoncerons ici chaque semaine</strong> un nouveau
+                  film à l'affiche !</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Jennifer Viala - Le 18/02/19 à 9h05</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card">
+                  <img class="card-img-top" src="images/pleinAir.jpg" alt="Le site est en ligne !">
+                  <div class="card-body">
+                    <h5 class="card-title">Le site est en ligne !</h5>
+                    <p class="card-text">C'est avec un grand plaisir que je poste ici pour la première fois afin de vous annoncer que notre site est en ligne !<br />Vous pourrez y retrouver les actualités du festival, la liste des 
+                    films allant être projetés ainsi que divers informations utiles pour planifier votre venue.<br />Nous remercions tout particulièrement l'agence WebMovie pour leur aide et le développement de ce site.<br />
+                  A très bientôt pour de prochaines actualités !</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Jennifer Viala - Le 10/02/19 à 15h24</small>
+                  </div>
+                </div>
+                </div>
+              </div>
+        </div>
+      </section>
+
+        <!-- Section "L'association" -->
+        <section class="row justify-content-md-center" id="association">
+            <div class="col-md-11">
+                <div class="card">
+                    <div class="card-header">
+                      L'association
+                    </div>
+                    
+                    <div class="card-body">
+
+                      <div class="row">
+                        <div class="col-md-8">
+                          <p>Fondée en 2018, "Les Films de Plein Air" est une association à but non lucratif. Notre objectif est d'apporter de la nouveauté et de proposer à <strong>tous les Parisiens (ainsi que les habitants des environs)</strong> des projections
+                        de films en plen air. Et tout cela gratuitement !<br />
+                        Sous la houlette de cette association se cache Jennifer Viala, une Parisienne dévouée au cinéma depuis son plus jeune âge et diplômée des arts et métiers. C'est en voyageant aux Etats-Unis en 2015 qu'elle 
+                        découvrit ce type d'événements. Une fois rentré en France elle a pris le temps de faire mûrir ce projet afin de permettre l'accès à la culture pour tous.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="row justify-content-end">
+                        <img class="rounded-circle" src="images/viala.jpg" width="150" height="150" alt="Jennifer Viala" />
+                        <blockquote class="col-md-4 blockquote text-right">
+                          <p><em>"Le but de cette association est de permettre l'accès à des films de qualité à tous les Parisiens, dans un environnement atypique et convivial et tout cela sans avoir à débourser quoi que ce soit.
+                            En bref, un accès à la culture pour tous !"</em></p>
+                          <footer class="blockquote-footer">Jennifer Viala <cite>– Présidente de l'association</cite></footer>
+                        </blockquote>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-8">
+                            <p>Nous ambitionons donc l'organisation d'au minimum un festival de plein air tous les deux mois. Chaque festival sera consacré à un thème différent et permettra ainsi la variété dans 
+                              la programmation. Que ce soit avec des <strong>films d'auteur, de science-fiction ou historiques</strong>, il y en aura pour tous les goûts !<br /> 
+                              Grâce à ce site, retrouvez l'ensemble de l'actualité de notre association ainsi que des festivals organisés ! 
+                            </p>
+                          </div>
+                      </div>
+
+                    </div>
+                </div>
+            </div>
+          </section>
+
+
+        <!-- Section "Le festival" -->
+        <section class="row justify-content-md-center" id="festival">
+          <div class="col-md-11">
+              <div class="card">
+                  <div class="card-header">
+                    Le festival
+                  </div>
+                  
+                  <div class="card-body">
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <table class="table table-bordered table-hover text-center">
+                          <tr>
+                            <td>Quoi ?</td>
+                            <td>Pour cette première édition de notre festival, nous vous proposons pas moins de 12 films ! Le thème choisi est le cinéma d'auteur et vous permettra de découvrir ou redécouvrir
+                              de nombreux classiques.<br />
+                              Pour la liste complète des films avec le programme, consultez la section <a href="#films" title="Le programme du festival">"Les films"</a> ci-dessous.</td>
+                          </tr>
+                          <tr>
+                            <td>Où ?</td>
+                            <td>Au parc Monceau dans le 8ème arrondissement de Paris. <br /> Parc Monceau, 35 Boulevard de Courcelles, 75008 Paris</td>
+                          </tr>
+                          <tr>
+                            <td>Quand ?</td>
+                            <td>Du mardi 5 août au jeudi 8 août 2019. <br />Chaque soir de 18h à minuit !</td>
+                          </tr>
+                          <tr>
+                            <td>Comment ?</td>
+                            <td>L'accès à ce festival et aux projections est entièrement gratuit ! Les projections se feront en plein air. <br />Néanmoins, pour des raisons logistiques il vous est recommandé
+                            d'indiquer votre participation dans la partie prévue à cet effet dans la liste des films projetés.</td>
+                          </tr>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+
+                  </div>
+              </div>
+          </div>
+        </section>
+
+        <!-- Section "Les films" -->
+        <section class="row justify-content-md-center" id="films">
+          <div class="col-md-11">
+            <div class="card">
+                <div class="card-header">
+                    Les films
+                </div>
+                  
+                  <div class="card-body">
+
+                    <ul class="nav nav-tabs nav-justified flex-column flex-sm-row">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#lundi">Lundi 5 août</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#mardi">Mardi 6 août</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#mercredi">Mercredi 7 août</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#jeudi">Jeudi 8 août</a>
+                        </li>
+                      </ul>
+
+                      <div class="tab-content justify-content-center">
+
+                        <div class="tab-pane fade show active" id="lundi">
+
+                          <!-- tableau films du lundi sous grand écran -->
+                            <table class="table table-bordered table-hover text-justify d-none d-sm-block">
+                              <tr>
+                                <th>Affiche</th>
+                                <th style="width: 70%;">Synopsis</th>
+                                <th style="width: 12%;">Horaire</th>
+                                <th style="width: 8%;">Réserver</th>
+                              </tr>
+                              <tr>
+                                <td><img src="images/films/polisse.jpg" alt="Polisse" /></td>
+                                <td>Le quotidien des policiers de la BPM (Brigade de Protection des Mineurs) ce sont les gardes à vue de pédophiles, les arrestations de pickpockets mineurs mais aussi la pause déjeuner où l’on se raconte ses problèmes
+                                 de couple ; ce sont les auditions de parents maltraitants, les dépositions des enfants, les dérives de la sexualité chez les adolescents, mais aussi la solidarité entre collègues et les fous rires
+                                    incontrôlables dans les moments les plus impensables ; c’est savoir que le pire existe, et tenter de faire avec…Comment ces policiers parviennent-ils à trouver l’équilibre entre leurs
+                                    vies privées et la réalité à laquelle ils sont confrontés, tous les jours ?</td>
+                                <td>Lundi 5 août à 18h30</td>
+                                <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                              </tr>
+                              <tr>
+                                  <td><img src="images/films/lahaine.jpg" alt="La Haine" /></td>
+                                  <td>Trois copains d'une banlieue ordinaire traînent leur ennui. Ils vont vivre la journee la plus importante de leur vie après une nuit d'émeutes provoquée par le passage à tabac d'Abdel Ichah par un inspecteur de police lors d'un interrogatoire. </td>
+                                  <td>Lundi 5 août à 20h30</td>
+                                  <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                              </tr>
+                              <tr>
+                                  <td><img src="images/films/unprophete.jpg" alt="Un Prophète" /></td>
+                                  <td>Condamné à six ans de prison, Malik El Djebena ne sait ni lire, ni écrire. A son arrivée en Centrale, seul au monde, il paraît plus jeune, plus fragile que les autres détenus. Il a 18 ans. D'emblée, il tombe
+                                        sous la coupe d'un groupe de prisonniers corses qui fait régner sa loi dans la Centrale. Le jeune homme apprend vite. Au fil des "missions", il s'endurcit et gagne la confiance des Corses.
+                                        Mais, très vite, Malik utilise toute son intelligence pour développer discrètement son propre réseau. Pour les Corses, il continue à jouer avec docilité son
+                                        rôle de larbin. En coulisses, il profite de ses sorties régulières pour mettre en place un trafic de drogue entre la prison et les cités. Il parvient ainsi à s'imposer peu à peu jusqu'à obtenir l'estime des
+                                        Musulmans, "l'autre" clan de la Centrale. Alors que débute une guerre de succession entre les deux bandes rivales, Malik est bien décidé à s'emparer du pouvoir.</td>
+                                  <td>Lundi 5 août à 22h30</td>
+                                  <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                              </tr>
+                            </table>
+
+                            <!-- tableau films du lundi sous mobile/tablette -->
+                            <table class="table table-bordered table-hover text-center d-sm-none">
+                                <tr>
+                                  <td><img src="images/films/polisse.jpg" alt="Polisse" /><br />
+                                  Lundi 5 août à 18h30<br />
+                                  <button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/lahaine.jpg" alt="La Haine" /><br />
+                                    Lundi 5 août à 20h30<br />
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/unprophete.jpg" alt="Un Prophète" /><br />
+                                    Lundi 5 août à 22h30<br />
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    
+                        <div class="tab-pane fade" id="mardi">
+
+                          <!-- tableau films du mardi sous grand écran -->
+                            <table class="table table-bordered table-hover text-justify d-none d-sm-block">
+                                <tr>
+                                    <th>Affiche</th>
+                                    <th style="width: 70%;">Synopsis</th>
+                                    <th style="width: 12%;">Horaire</th>
+                                    <th style="width: 8%;">Réserver</th>
+                                </tr>  
+                              <tr>
+                                  <td><img src="images/films/jevaisbien.jpg" alt="Je vais bien, ne t'en fais pas" /></td>
+                                  <td>Comme elle rentre de vacances, Lili, 19 ans, apprend par ses parents que Loïc, son frère jumeau, suite à une violente dispute avec son père, a quitté la maison. Loïc ne lui
+                                     donnant pas de nouvelle, Lili finit par se persuader qu'il lui est arrivé quelque chose et part à sa recherche. Ce qu'elle va découvrir dépasse l'entendement.</td>
+                                  <td>Mardi 6 août à 18h30</td>
+                                  <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/persepolis.jpg" alt="Persepolis" /></td>
+                                    <td>Téhéran 1978 : Marjane, huit ans, songe à l'avenir et se rêve en prophète sauvant le monde. Choyée par des parents modernes et cultivés, particulièrement liée à sa grand-mère, elle suit avec exaltation les évènements qui vont mener à la révolution et provoquer la chute du régime du Chah.
+                                        Avec l'instauration de la République islamique débute le temps des "commissaires de la révolution" qui contrôlent tenues et comportements. Marjane qui doit porter le voile, se rêve désormais en révolutionnaire.
+                                        Bientôt, la guerre contre l'Irak entraîne bombardements, privations, et disparitions de proches. La répression intérieure devient chaque jour plus sévère. </td>
+                                    <td>Mardi 6 août à 20h30</td>
+                                    <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/derouilleetdos.jpg" alt="De rouille et d'os" /></td>
+                                    <td> Adapté d'un recueil de nouvelles de Craig Davidson, auteur américain controversé, De rouille et d'os, drame profond de Jacques Audiard, est une ode au courage,
+                                       à la ténacité, au deuil et à l'entraide. Il raconte les destins croisés de Stéphanie, une jeune dresseuse d'orques qui perd ses deux jambes à la suite d'un accident 
+                                       et d'Ali, père d'un petit garçon de 5 ans, pauvre et paumé. Séparément, ils ne sont rien, mais ensemble, ils peuvent soulever des montagnes. </td>
+                                    <td>Mardi 6 août à 22h30</td>
+                                    <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                            </table>
+
+                            <!-- tableau films du mardi sous mobile/tablette -->
+                            <table class="table table-bordered table-hover text-center d-sm-none">
+                                <tr>
+                                  <td><img src="images/films/jevaisbien.jpg" alt="Je vais bien, ne t'en fais pas" /><br />
+                                  Mardi 6 août à 18h30<br />
+                                  <button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/persepolis.jpg" alt="Persepolis" /><br />
+                                    Mardi 6 août à 20h30<br />
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/derouilleetdos.jpg" alt="De rouille et d'os" /><br />
+                                    Lundi 5 août à 22h30<br />
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="tab-pane fade" id="mercredi">
+
+                          <!-- tableau films du mercredi grand écran -->
+                            <table class="table table-bordered table-hover text-justify d-none d-sm-block">
+                                <tr>
+                                    <th>Affiche</th>
+                                    <th style="width: 70%;">Synopsis</th>
+                                    <th style="width: 12%;">Horaire</th>
+                                    <th style="width: 8%;">Réserver</th>
+                                </tr> 
+                              <tr>
+                                  <td><img src="images/films/entrelesmurs.jpg" alt="Entre les murs" /></td>
+                                  <td>François est un jeune professeur de français dans un collège difficile. Dans sa volonté d'instruire sans pour autant domestiquer, François n'hésite pas à aller chercher 
+                                    les adolescents là où ça fait mal, les mettant souvent face à leurs limites afin de les motiver. Quitte à prendre parfois le risque du dérapage.</td>
+                                  <td>Mercredi 7 août à 18h30</td>
+                                  <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/melancholia.jpg" alt="Melancholia" /></td>
+                                    <td>
+                                        À l'occasion de leur mariage, Justine et Michael donnent une somptueuse réception dans la maison de la soeur de Justine et de son beau-frère. Pendant ce temps, la planète Melancholia se dirige vers la Terre...  </td>
+                                    <td>Mercredi 7 août à 20h30</td>
+                                    <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/laviedadele.jpg" alt="La vie d'Adèle" /></td>
+                                    <td>A 15 ans, Adèle ne se pose pas de question: une fille, ça sort avec des garçons. Sa vie bascule le jour où elle rencontre Emma, une jeune femme aux cheveux bleus, 
+                                      qui lui fait découvrir le désir et lui permettra de s'affirmer en tant que femme et adulte. Face au regard des autres Adèle grandit, se cherche, se perd, se trouve...  </td>
+                                    <td>Mercredi 7 août à 22h30</td>
+                                    <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                            </table>
+
+                            <!-- tableau films du mercredi sous mobile/tablette -->
+                            <table class="table table-bordered table-hover text-center d-sm-none">
+                                <tr>
+                                  <td><img src="images/films/entrelesmurs.jpg" alt="Entre les murs" /><br />
+                                  Mercredi 7 août à 18h30<br />
+                                  <button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/melancholia.jpg" alt="Melancholia" /><br />
+                                    Mercredi 7 août à 20h30<br />
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/laviedadele.jpg" alt="La vie d'Adèle" /><br />
+                                    Mercredi 7 août à 22h30<br />
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                            </table>
+                        </div>
+                    
+                        <div class="tab-pane fade" id="jeudi">
+
+                          <!-- tableau films du jeudi sous grand écran -->
+                            <table class="table table-bordered table-hover text-justify d-none d-sm-block">
+                                <tr>
+                                    <th>Affiche</th>
+                                    <th style="width: 70%;">Synopsis</th>
+                                    <th style="width: 12%;">Horaire</th>
+                                    <th style="width: 8%;">Réserver</th>
+                                </tr>  
+                              <tr>
+                                  <td><img src="images/films/mammuth.jpg" alt="Mammuth" /></td>
+                                  <td>Serge Pilardos vient d'avoir 60 ans. Il travaille depuis l'âge de 16 ans, jamais au chômage, jamais malade. Mais l'heure de la retraite a sonné, et c'est la désillusion : il lui manque des points, certains
+                                      employeurs ayant oublié de le déclarer ! Poussé par Catherine, sa femme, il enfourche sa vieille moto des années 70, une " Mammut " qui lui vaut son surnom, et part à la recherche de ses bulletins de
+                                      salaires. Durant son périple, il retrouve son passé et sa quête de documents administratifs devient bientôt accessoire...</td>
+                                  <td>Jeudi 8 août à 18h30</td>
+                                  <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/welcome.jpg" alt="Welcome" /></td>
+                                    <td>Pour impressionner et reconquérir sa femme, Simon, maître nageur à la piscine de Calais, prend le risque d'aider en secret un jeune réfugié kurde qui veut traverser la Manche à
+                                        la nage</td>
+                                    <td>Jeudi 8 août à 20h30</td>
+                                    <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/lalaland.jpg" alt="La La Land" /></td>
+                                    <td>Au cœur de Los Angeles, une actrice en devenir prénommée Mia sert des cafés entre deux auditions. De son côté, Sebastian, passionné de jazz, joue du piano dans des
+                                       clubs miteux pour assurer sa subsistance. Tous deux sont bien loin de la vie rêvée à laquelle ils aspirent… Le destin va réunir ces doux rêveurs, mais leur coup de
+                                        foudre résistera-t-il aux tentations, aux déceptions, et à la vie trépidante d’Hollywood ? </td>
+                                    <td>Jeudi 8 août à 22h30</td>
+                                    <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                            </table>
+
+                            <!-- tableau films du jeudi sous mobile/tablette -->
+                            <table class="table table-bordered table-hover text-center d-sm-none">
+                                <tr>
+                                  <td><img src="images/films/mammuth.jpg" alt="Mammuth" /><br />
+                                  Jeudi 8 août à 18h30<br />
+                                  <button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/welcome.jpg" alt="Welcome" /><br />
+                                    Jeudi 8 août à 20h30<br />
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/films/lalaland.jpg" alt="La La Land" /><br />
+                                    Jeudi 8 août à 22h30<br />
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalInscription">Je viens !</button></td>
+                                </tr>
+                            </table>
+                        </div>
+                  </div>
+             </div>
+          </div>
+        </section>
+
+        <!-- Section "Contact" -->
+        <section class="row justify-content-md-center" id="contact">
+          <div class="col-md-6">
+              <div class="card">
+                  <div class="card-header">
+                      Nous contacter
+                  </div>
+                    
+                  <div class="card-body">
+                    <form>
+                          <div class="form-group row col-auto">
+                            <label for="prenom" class="col-md-2 col-form-label">Prénom :</label>
+                            <div class="col-md-10"><input type="text" class="form-control" id="prenom" placeholder="Votre prénom"></div>
+                          </div>
+                          <div class="form-group row col-auto">
+                              <label for="nom"class="col-md-2 col-form-label">Nom :</label>
+                              <div class="col-md-10"><input type="text" class="form-control" id="nom" placeholder="Votre nom"></div>
+                          </div>
+                          <div class="form-group row col-auto">
+                              <label for="email" class="col-md-2 col-form-label">E-mail :</label>
+                              <div class="col-md-10"><input type="email" class="form-control" id="email" placeholder="jean.dupont@gmail.com"></div>
+                            </div>
+                            <div class="form-group row col-auto">
+                                <label for="objet" class="col-md-2 col-form-label">Sujet :</label>
+                                <div class="col-md-10"><input type="text" class="form-control" id="objet" placeholder="Entrez ici l'objet de votre demande"></div>
+                              </div>
+                          <div class="form-group row col-auto">
+                            <label for="message" class="col-md-2 col-form-label">Message :</label>
+                            <div class="col-md-10"><textarea class="form-control" id="message" rows="3"></textarea></div>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                  </div>
+
+               </div>
+          </div>
+        </section>
+
+      </div>
+
+        <footer class="page-footer text-center">
+          <div class="row align-items-center no-gutters" id="footer">
+            <div class="col-md-4">
+                <i class="fas fa-phone"></i> 01 12 34 56 78
+            </div>
+            <div class="col-md-4">
+                <img src="images/logo2.png" height="100" alt="Les Films de Plein Air"/>
+            </div>
+            <div class="col-md-4">
+                <a href="" title="Notre page Facebook"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a href="" title="Notre page Twitter"><i class="fab fa-twitter-square fa-2x"></i></a>
+                <a href="" title="Notre page Instragram"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+          </div>
+        </footer>
+
+  </body>
+</html>

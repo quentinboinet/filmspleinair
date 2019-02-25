@@ -1,0 +1,90 @@
+body
+{
+    font-size:0.95em
+    font-family: "Trebuchet MS", "Commic Sans MS", serif;
+    background-image: linear-gradient(to bottom, #122648, #21355b, #2f4570, #3e5685, #4d679a, #587aa9, #658db8, #74a0c7, #8db8d1, #adcedb, #d0e4e8, #f6f9f9);
+}
+.navbar
+{
+    background-color:rgb(26, 46, 83, 0.95);
+}
+.nav-link
+{
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+.navbar-toggler-icon
+{
+    color: white;
+}
+#headerImage
+{
+    background-image: url("../images/header.jpg");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    height: 70vh;
+}
+
+.page-footer
+{
+    background-color: rgb(26, 46, 83, 0.95);
+    color: white; 
+    font-size: 1.3em;
+}
+
+#footer
+{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#footer i, #footer a
+{
+    margin-left:10px;
+    margin-right:10px;
+    color: white;
+}
+
+.card
+{
+    margin-top: 30px;
+    margin-bottom:30px;
+    border: 2px solid black;
+    border-radius: 20px 0px 20px 0px;
+    box-shadow: 10px 10px 4px 1px rgba(20, 20, 20, 0.7); 
+}
+
+.card-header
+{
+    font-size: 1.2em;
+}
+
+.card-body .nav li
+{
+    color:white;
+    background-color: rgb(26, 46, 83, 0.95);
+}
+
+.card-body .nav li a
+{
+    color:white;
+}
+
+.card-img-top
+{
+    height: 200px;
+    border-radius: 20px 0px 0px 0px;
+}
+
+.card-deck .card
+{
+    filter : grayscale(100%);
+}
+
+.card-deck .card:hover
+{
+    transform: scale(1.05);
+    filter: grayscale(0);
+}
